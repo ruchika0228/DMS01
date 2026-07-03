@@ -28,12 +28,12 @@ const Dashboard = () => {
         }
     };
 
-    const stats = {
-        totalDocuments: '1,284',
-        verifiedBlocks: '84%',
-        recentEdits: '156',
-        activeNodes: '42',
-    };
+    const stats = [
+        { label: 'Total Documents', value: '1,284', trend: '+12.4%', icon: <MdFileUpload /> },
+        { label: 'Verified Blocks', value: '84%', trend: '+3.1%', icon: <MdTimeline /> },
+        { label: 'Recent Edits', value: '156', trend: '+8.6%', icon: <MdHistory /> },
+        { label: 'Active Nodes', value: '42', trend: '+2', icon: <MdGroup /> },
+    ];
 
     const recentActivity = [
         { title: 'Project_Alpha.dwg uploaded', time: '2 mins ago', type: 'upload' },
@@ -43,27 +43,27 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard reveal">
+            <div className="dashboard-header">
+                <div>
+                    <h1 className="page-title">Overview</h1>
+                    <p className="page-subtitle">Your document network at a glance — secure, verified, in sync.</p>
+                </div>
+                <span className="accent-chip dashboard-live-chip">
+                    <span className="live-dot"></span> Live
+                </span>
+            </div>
+
             <div className="stats-grid">
-                <div className="stat-card glass-card">
-                    <MdFileUpload className="stat-icon" />
-                    <div className="stat-label">Total Documents</div>
-                    <div className="stat-value">{stats.totalDocuments}</div>
-                </div>
-                <div className="stat-card glass-card">
-                    <MdTimeline className="stat-icon" />
-                    <div className="stat-label">Verified Blocks</div>
-                    <div className="stat-value">{stats.verifiedBlocks}</div>
-                </div>
-                <div className="stat-card glass-card">
-                    <MdHistory className="stat-icon" />
-                    <div className="stat-label">Recent Edits</div>
-                    <div className="stat-value">{stats.recentEdits}</div>
-                </div>
-                <div className="stat-card glass-card">
-                    <MdGroup className="stat-icon" />
-                    <div className="stat-label">Active Nodes</div>
-                    <div className="stat-value">{stats.activeNodes}</div>
-                </div>
+                {stats.map((stat, index) => (
+                    <div key={stat.label} className="stat-card glass-card" style={{ animationDelay: `${0.1 + index * 0.08}s` }}>
+                        <div className="stat-card-top">
+                            <span className="stat-icon-tile">{stat.icon}</span>
+                            <span className="stat-trend">{stat.trend}</span>
+                        </div>
+                        <div className="stat-label">{stat.label}</div>
+                        <div className="stat-value">{stat.value}</div>
+                    </div>
+                ))}
             </div>
 
             <div className="dashboard-main-grid">

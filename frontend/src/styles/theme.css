@@ -1,22 +1,22 @@
-/* ================================================= */
-/* GLOBAL THEME - STRICT ACCURACY & PREMIUM NAVY    */
-/* ================================================= */
+/* ===================================================== */
+/* GLOBAL THEME — VAULTO-INSPIRED FINANCE-GRADE DESIGN   */
+/* Deep charcoal-green surfaces, signature lime accent,  */
+/* Plus Jakarta Sans / Inter typography, soft motion.    */
+/* ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root {
-  /* === Professional Typography Hierarchy === */
-  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* === Typography === */
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* === Accents: Royal Navy & White Palette === */
-  --color-primary: #ffffff;
-  --color-primary-dark: #e2e8f0;
-  --color-primary-light: rgba(255, 255, 255, 0.2);
-  --color-secondary: #14B8A6;
-  --color-accent: #ffffff;
-  --color-bg-navy: #060A18;
+  /* === Status colors (theme independent) === */
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+  --color-info: #60A5FA;
 
   /* === Layout & Spacing === */
   --spacing-xs: 4px;
@@ -28,60 +28,87 @@
 
   --gap-page: 32px;
   --gap-card: 24px;
-  --radius-card: 24px;
-  --radius-btn: 14px;
+  --radius-card: 20px;
+  --radius-btn: 12px;
+  --radius-pill: 999px;
   --spacing-section: 48px;
 
-  /* === Performance Animations === */
+  /* === Motion === */
   --transition-standard: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.2s ease;
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* === Light Theme === */
+/* === Light Theme — warm paper white, deep leaf accent === */
 [data-theme="light"] {
-  --color-bg-primary: #f8fafc;
-  --color-bg-secondary: #f1f5f9;
-  --color-bg-tertiary: #e2e8f0;
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #475569;
-  --color-text-muted: #64748b;
-  --shadow-standard: 0 12px 40px -12px rgba(0, 0, 0, 0.1);
+  --color-primary: #4D7C0F;
+  --color-primary-dark: #3F6212;
+  --color-primary-light: rgba(77, 124, 15, 0.12);
+  --color-on-primary: #FAFDF4;
+  --color-secondary: #7C3AED;
+  --color-accent: #4D7C0F;
+  --color-accent-fill: #C9F158;
+  --color-bg-navy: #F4F6F1;
+
+  --color-bg-primary: #F4F6F1;
+  --color-bg-secondary: #ECEFE6;
+  --color-bg-tertiary: #E2E6DA;
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(20, 26, 22, 0.08);
+  --glass-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
+  --color-text-primary: #141A16;
+  --color-text-secondary: #48544B;
+  --color-text-muted: #79837B;
+  --surface-hover: rgba(20, 26, 22, 0.04);
+  --surface-active: rgba(20, 26, 22, 0.07);
+  --shadow-standard: 0 10px 32px -12px rgba(20, 26, 22, 0.12);
+  --shadow-accent: 0 8px 24px -6px rgba(77, 124, 15, 0.35);
 }
 
-/* === Dark Theme (Premium Royal Navy) === */
+/* === Dark Theme — deep charcoal green, lime signature === */
 [data-theme="dark"] {
-  --color-bg-primary: #060A18;
-  --color-bg-secondary: #0B132B;
-  --color-bg-tertiary: #131B31;
-  --glass-bg: rgba(28, 37, 65, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --color-primary: #C9F158;
+  --color-primary-dark: #B4E845;
+  --color-primary-light: rgba(201, 241, 88, 0.14);
+  --color-on-primary: #10150A;
+  --color-secondary: #A78BFA;
+  --color-accent: #C9F158;
+  --color-accent-fill: #C9F158;
+  --color-bg-navy: #0A0E0C;
+
+  --color-bg-primary: #0A0E0C;
+  --color-bg-secondary: #101612;
+  --color-bg-tertiary: #182019;
+  --glass-bg: rgba(19, 26, 21, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.07);
   --glass-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
-  --color-text-primary: #E2E8F0;
-  --color-text-secondary: #94A3B8;
-  --color-text-muted: #64748b;
-  --shadow-standard: 0 20px 50px rgba(0, 0, 0, 0.4);
+  --color-text-primary: #EDF2EA;
+  --color-text-secondary: #98A69B;
+  --color-text-muted: #667069;
+  --surface-hover: rgba(255, 255, 255, 0.05);
+  --surface-active: rgba(255, 255, 255, 0.09);
+  --shadow-standard: 0 18px 44px rgba(0, 0, 0, 0.42);
+  --shadow-accent: 0 10px 30px -6px rgba(201, 241, 88, 0.28);
 }
 
-/* === Global Executive Components === */
+/* === Global Surface Components === */
 .glass-card {
   background: var(--glass-bg);
-  backdrop-filter: blur(28px);
+  backdrop-filter: blur(24px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-card);
   padding: 24px;
   box-shadow: var(--shadow-standard);
-  transition: var(--transition-standard);
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, border-color 0.35s ease;
   position: relative;
   overflow: hidden;
 }
 
 .glass-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-standard), 0 0 0 1px var(--color-primary-light);
 }
 
 .selection-glow {
@@ -114,24 +141,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-  animation: scan 4s linear infinite;
+  background: linear-gradient(180deg, transparent, var(--color-primary-light), transparent);
+  opacity: 0.35;
+  animation: scan 5s linear infinite;
   pointer-events: none;
 }
 
 @keyframes scan {
-  from {
-    top: -100%;
-  }
-
-  to {
-    top: 100%;
-  }
+  from { top: -100%; }
+  to { top: 100%; }
 }
 
+/* === Typography helpers === */
 .page-title {
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--color-text-primary);
@@ -142,6 +166,65 @@
   font-family: var(--font-main);
   font-size: 14px;
   color: var(--color-text-secondary);
-  opacity: 0.8;
   margin-bottom: var(--spacing-xs);
+}
+
+/* Accent chip — lime pill, the signature element */
+.accent-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-fill);
+  color: #10150A;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* === Shared keyframes === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to { background-position: 200% center; }
+}
+
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 var(--color-primary-light); }
+  50% { box-shadow: 0 0 0 6px transparent; }
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-tertiary);
+  border-radius: 8px;
+  border: 2px solid var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
 }

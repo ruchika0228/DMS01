@@ -1,5 +1,5 @@
 /* ================================================= */
-/* BUTTON — ACCURATE & PROFESSIONAL SYSTEM          */
+/* BUTTON — TOKEN-DRIVEN SYSTEM                      */
 /* ================================================= */
 
 .btn {
@@ -9,7 +9,7 @@
     font-size: 14px;
     font-family: inherit;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s var(--ease-out-expo);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -18,24 +18,24 @@
 }
 
 .btn-primary {
-    background: var(--color-primary-dark);
-    color: var(--color-bg-primary);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
 }
 
 .btn-primary:hover {
-    background: var(--color-primary);
+    background: var(--color-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    box-shadow: var(--shadow-accent);
 }
 
 .btn-outline {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-hover);
     border-color: var(--glass-border);
     color: var(--color-text-primary);
 }
 
 .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--surface-active);
     border-color: var(--color-primary);
     color: var(--color-primary);
 }
@@ -47,6 +47,7 @@
     font-weight: 700 !important;
     font-size: 14px !important;
     font-family: inherit !important;
+    color: var(--color-on-primary) !important;
 }
 
 .gradient-btn-primary {
@@ -55,4 +56,5 @@
 
 .gradient-btn-accept {
     background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: #fff !important;
 }

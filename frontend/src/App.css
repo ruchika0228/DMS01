@@ -1,25 +1,23 @@
 .app-content {
-  padding-top: 84px;
-  /* Tight clearance above fixed navbar (72px height) */
-  padding-bottom: 60px;
-  /* Matched to new footer height + gap */
+  padding-top: 88px;
+  /* Clearance above fixed navbar (72px height) */
+  padding-bottom: 64px;
+  /* Matched to fixed footer height + gap */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  animation: pageReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: pageReveal 0.55s var(--ease-out-expo);
 }
 
 @keyframes pageReveal {
   from {
     opacity: 0;
-    transform: translateY(12px);
-    filter: blur(8px);
+    transform: translateY(10px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 }
 
@@ -31,7 +29,7 @@
 }
 
 .app-content.content-blur {
-  filter: blur(20px) brightness(0.6);
+  filter: blur(16px) brightness(0.65);
   pointer-events: none;
   transition: filter 0.4s ease;
 }
