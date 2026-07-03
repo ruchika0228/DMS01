@@ -1,0 +1,188 @@
+/* ================================================= */
+/* FILE UPLOAD — ACCURATE ALIGNMENT                  */
+/* ================================================= */
+
+.file-upload {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.upload-area {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    border: 2px dashed var(--glass-border);
+    border-radius: var(--radius-card);
+    background: var(--color-bg-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-area:hover, .upload-area.dragging {
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.upload-area.has-file {
+    border-style: solid;
+    border-color: var(--color-primary-light);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.upload-icon {
+    font-size: 5rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.upload-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--color-text-primary);
+}
+
+.upload-description {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    margin-bottom: 20px;
+}
+
+.upload-formats {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.file-input-hidden {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+    z-index: -1;
+}
+
+/* File Preview Styles */
+.file-preview {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 550px;
+    border: 1px solid var(--glass-border);
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.file-icon {
+    font-size: 3.5rem;
+    color: var(--color-primary);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.file-details {
+    flex: 1;
+    text-align: left;
+}
+
+.file-name {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+.file-size {
+    margin: 6px 0 0;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+.remove-btn {
+    background: rgba(255, 77, 77, 0.1);
+    border: none;
+    color: #ff4d4d;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.remove-btn:hover {
+    background: #ff4d4d;
+    color: white;
+    transform: scale(1.1);
+}
+
+.success-icon {
+    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.3));
+}
+
+/* Submit Button */
+.upload-submit-btn {
+    margin-top: 2rem;
+    padding: 14px 48px;
+    background: var(--color-primary);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.upload-submit-btn:hover:not(:disabled) {
+    background: #f0c541;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+}
+
+.upload-submit-btn:active:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.upload-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--color-text-muted);
+}
+
+.upload-status-text {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.upload-success-msg {
+    font-weight: 700;
+    font-size: 1.1rem;
+    animation: fadeInUp 0.4s ease-out;
+}

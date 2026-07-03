@@ -1,0 +1,37 @@
+.app-content {
+  padding-top: 84px;
+  /* Tight clearance above fixed navbar (72px height) */
+  padding-bottom: 60px;
+  /* Matched to new footer height + gap */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  animation: pageReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.app-content>* {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 24px;
+}
+
+.app-content.content-blur {
+  filter: blur(20px) brightness(0.6);
+  pointer-events: none;
+  transition: filter 0.4s ease;
+}

@@ -1,0 +1,111 @@
+/* ─── MapView Page ────────────────────────────────────────────────────────── */
+.mapview-page {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    background: var(--color-bg-primary);
+    overflow: hidden;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.mapview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px 14px;
+    background: var(--glass-bg-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.mapview-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.mapview-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: var(--glow-primary);
+    flex-shrink: 0;
+}
+
+.mapview-title {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* ─── Stats Bar ─────────────────────────────────────────────────────────── */
+.mapview-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 10px 18px;
+}
+
+.mapview-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.mapview-stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1;
+}
+
+.mapview-stat-label {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mapview-stat-divider {
+    width: 1px;
+    height: 28px;
+    background: var(--glass-border);
+}
+
+/* ─── Map Container ────────────────────────────────────────────────────── */
+.mapview-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .mapview-header {
+        padding: 12px 16px;
+    }
+
+    .mapview-stats {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mapview-title {
+        font-size: 17px;
+    }
+}

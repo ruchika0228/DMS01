@@ -1,0 +1,118 @@
+.docx-viewer {
+    width: 100%;
+    background: white;
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #000;
+}
+
+.docx-content {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: #000;
+}
+
+.docx-content h1,
+.docx-content h2,
+.docx-content h3,
+.docx-content h4,
+.docx-content h5,
+.docx-content h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #000;
+}
+
+.docx-content h1 {
+    font-size: 2em;
+}
+
+.docx-content h2 {
+    font-size: 1.5em;
+}
+
+.docx-content h3 {
+    font-size: 1.25em;
+}
+
+.docx-content p {
+    margin-bottom: 1em;
+    color: #000;
+}
+
+.docx-content ul,
+.docx-content ol {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+.docx-content li {
+    margin-bottom: 0.5em;
+}
+
+.docx-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.docx-content table td,
+.docx-content table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.docx-content table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.docx-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 1em 0;
+}
+
+.docx-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-2xl);
+    color: var(--color-text-secondary);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--glass-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.docx-error {
+    padding: var(--spacing-2xl);
+    text-align: center;
+    color: var(--color-error);
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--color-error);
+    border-radius: var(--radius-lg);
+}
+
+@media (max-width: 640px) {
+    .docx-viewer {
+        padding: var(--spacing-lg);
+    }
+
+    .docx-content {
+        font-size: 14px;
+    }
+}

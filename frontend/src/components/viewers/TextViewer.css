@@ -1,0 +1,82 @@
+.text-viewer {
+    width: 100%;
+    background: white;
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.text-content {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+.text-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-2xl);
+    color: var(--color-text-secondary);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--glass-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.text-error {
+    padding: var(--spacing-2xl);
+    text-align: center;
+    color: var(--color-error);
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--color-error);
+    border-radius: var(--radius-lg);
+}
+
+/* Custom scrollbar for text viewer */
+.text-viewer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.text-viewer::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: var(--radius-sm);
+}
+
+.text-viewer::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: var(--radius-sm);
+}
+
+.text-viewer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media (max-width: 640px) {
+    .text-viewer {
+        padding: var(--spacing-lg);
+        max-height: 400px;
+    }
+
+    .text-content {
+        font-size: 12px;
+    }
+}

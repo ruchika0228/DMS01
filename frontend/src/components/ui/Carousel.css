@@ -1,0 +1,140 @@
+.carousel {
+    width: 100%;
+    position: relative;
+}
+
+.carousel-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.carousel-slides {
+    flex: 1;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform var(--transition-slow);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-nav-area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all var(--transition-normal);
+    opacity: 0;
+    /* Hidden by default, shown on hover */
+}
+
+/* Hover Effects with Gradient */
+.carousel:hover .carousel-nav-area {
+    opacity: 1;
+}
+
+.carousel-nav-area.prev {
+    left: 0;
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.4) 0%, transparent 100%);
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
+}
+
+.carousel-nav-area.next {
+    right: 0;
+    background: linear-gradient(-90deg, rgba(99, 102, 241, 0.4) 0%, transparent 100%);
+    border-top-right-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+}
+
+.carousel-nav-area:hover {
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.6) 0%, transparent 100%);
+    /* Slightly stronger on direct hover */
+}
+
+.carousel-nav-area.next:hover {
+    background: linear-gradient(-90deg, rgba(99, 102, 241, 0.6) 0%, transparent 100%);
+}
+
+
+.nav-icon {
+    font-size: 40px;
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    opacity: 0.8;
+    transition: transform var(--transition-fast);
+}
+
+.carousel-nav-area:hover .nav-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-text-muted);
+    /* Changed from glass-border for better visibility */
+    opacity: 0.3;
+    /* Added opacity to keep it subtle but visible */
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
+.carousel-dot.active {
+    width: 24px;
+    opacity: 1;
+    /* Ensure active dot is fully visible */
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow: var(--glow-primary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .carousel-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: var(--font-lg);
+    }
+
+    .carousel-content {
+        gap: var(--spacing-sm);
+    }
+
+    .carousel-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .carousel-dot.active {
+        width: 18px;
+    }
+}

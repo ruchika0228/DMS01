@@ -1,0 +1,220 @@
+/* ================================================= */
+/* AUTH PAGE — ACCURATE VERTICAL ALIGNMENT           */
+/* ================================================= */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    background: transparent;
+    position: relative;
+}
+
+.auth-mesh-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+    z-index: -1;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.auth-brand-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--glass-border);
+}
+
+.auth-form-section {
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.auth-logos {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.auth-logo-box {
+    background: #fff;
+    padding: 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.auth-logo-img {
+    height: 32px;
+    width: auto;
+}
+
+.auth-logo-divider {
+    width: 1px;
+    height: 32px;
+    background: var(--glass-border);
+}
+
+.auth-brand-name {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.auth-brand-name span {
+    color: var(--color-primary);
+}
+
+.auth-welcome {
+    margin-bottom: 40px;
+}
+
+.auth-welcome h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.auth-welcome p {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.auth-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.auth-feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.auth-feature-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.feature-icon {
+    font-size: 24px;
+    color: var(--color-primary);
+}
+
+.auth-feature-card span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: -8px;
+    margin-bottom: 8px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.checkbox-label input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary);
+}
+
+.forgot-link {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.auth-footer {
+    text-align: center;
+    font-size: 15px;
+    color: #64748b;
+    margin-top: 24px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 6px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.toggle-btn:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 850px) {
+    .auth-card {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+    }
+    
+    .auth-brand-section {
+        display: none;
+    }
+}

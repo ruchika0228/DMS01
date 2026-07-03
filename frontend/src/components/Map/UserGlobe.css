@@ -1,0 +1,217 @@
+.globe-container {
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.globe-container:active {
+    cursor: grabbing;
+}
+
+/* 3D Globe Legend Overlay */
+.globe-overlay {
+    bottom: 40px !important;
+    right: 40px !important;
+    width: 280px !important;
+    pointer-events: auto !important;
+}
+
+.legend-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+}
+
+.l-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+}
+
+.l-val {
+    font-size: var(--font-xl);
+    font-weight: 700;
+    color: var(--color-primary-light);
+}
+
+.l-lab {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+}
+
+/* ── Custom Marker Wrapper & Alignment ── */
+.custom-marker-wrapper {
+    position: absolute;
+    pointer-events: none;
+    /* Let globe drag work around markers */
+}
+
+.glass-marker-container.globe-marker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -100%);
+    /* Anchor bottom of stem to coordinate */
+    pointer-events: auto;
+    /* Enable clicks on the marker itself */
+}
+
+/* ── Markers (Mirroring UserMap.css) ── */
+.glass-marker-circle {
+    width: 40px !important;
+    height: 40px !important;
+    background: rgba(15, 23, 42, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Shining Mirror Effect */
+.glass-marker-circle::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -200% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent) !important;
+    transform: skewX(-25deg) !important;
+    animation: shineLoop 3s infinite ease-in-out !important;
+}
+
+@keyframes shineLoop {
+    0% {
+        left: -200%;
+    }
+
+    35% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+.glass-marker-label {
+    font-weight: 800 !important;
+    font-size: 16px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.glass-marker-stem {
+    width: 2px !important;
+    height: 12px !important;
+    margin-top: -1px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ── Custom Zoom Controls ── */
+.globe-zoom-controls {
+    position: absolute !important;
+    top: 24px !important;
+    left: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    z-index: 1001 !important;
+}
+
+.zoom-btn {
+    width: 44px !important;
+    height: 44px !important;
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    color: white !important;
+    font-size: 24px !important;
+    font-weight: 300 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.zoom-btn:hover {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+.zoom-btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* ── Light Mode Overrides ── */
+.light-theme {
+    background: #f8fafc !important;
+}
+
+.light-theme .zoom-btn {
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #1e293b !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .zoom-btn:hover {
+    background: #fff !important;
+    border-color: #6366f1 !important;
+}
+
+.light-theme .globe-overlay {
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #1e293b !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .l-stat {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-theme .l-lab {
+    color: #64748b !important;
+}
+
+.light-theme .legend-title {
+    color: #1e293b !important;
+    opacity: 0.9 !important;
+}
+
+.light-theme .glass-marker-circle {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .glass-marker-label {
+    text-shadow: none !important;
+}

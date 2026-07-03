@@ -1,0 +1,58 @@
+/* ================================================= */
+/* BUTTON — ACCURATE & PROFESSIONAL SYSTEM          */
+/* ================================================= */
+
+.btn {
+    padding: 12px 24px;
+    border-radius: var(--radius-btn);
+    font-weight: 600;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: var(--color-primary-dark);
+    color: var(--color-bg-primary);
+}
+
+.btn-primary:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--glass-border);
+    color: var(--color-text-primary);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Gradient Button System Consistency */
+.gradient-btn {
+    padding: 12px 24px !important;
+    border-radius: var(--radius-btn) !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    font-family: inherit !important;
+}
+
+.gradient-btn-primary {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)) !important;
+}
+
+.gradient-btn-accept {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+}

@@ -1,0 +1,118 @@
+.redaction-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #0f1014;
+    color: #fff;
+    padding: var(--spacing-xl);
+    animation: fadeIn var(--transition-normal);
+}
+
+.redaction-header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.page-title {
+    font-size: var(--font-3xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.config-summary {
+    font-size: 0.85rem;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.meta-divider {
+    color: #444;
+}
+
+.redaction-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.redaction-tools {
+    width: 280px;
+    background: #1a1b23;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.redaction-tools h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #fff;
+}
+
+.tool-hint {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.placeholder-tools {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tool-item {
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tool-item.active {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: #6366f1;
+    color: #fff;
+}
+
+.tool-item:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.document-viewer-area {
+    flex: 1;
+    background: #0f1014;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 2rem;
+}
+
+.redaction-page.loading {
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #6366f1;
+}
+
+.no-file {
+    margin: auto;
+    color: #666;
+    font-size: 1.1rem;
+}

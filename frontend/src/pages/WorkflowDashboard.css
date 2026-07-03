@@ -1,0 +1,125 @@
+.workflow-dashboard {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.document-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+.doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.doc-title-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-icon {
+    font-size: 1.5rem;
+}
+
+.doc-desc {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.workflow-timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.timeline-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 120px;
+}
+
+.stage-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.timeline-stage.Approved .stage-dot { background: #28a745; }
+.timeline-stage.Pending .stage-dot { background: #ffc107; box-shadow: 0 0 10px #ffc107; }
+.timeline-stage.Rejected .stage-dot { background: #dc3545; }
+
+.stage-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+}
+
+.stage-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.stage-user {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.timeline-connector {
+    position: absolute;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 6px;
+    left: 50%;
+    width: 100%;
+    z-index: 0;
+}
+
+.doc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timestamp {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.no-docs {
+    text-align: center;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    color: var(--text-muted);
+}

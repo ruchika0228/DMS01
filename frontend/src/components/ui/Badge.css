@@ -1,0 +1,114 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-fast);
+}
+
+/* Variants */
+.badge-primary {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--color-primary);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.15);
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.08);
+    color: var(--color-accent);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.12);
+}
+
+.badge-warning {
+    background: rgba(245, 158, 11, 0.08);
+    color: var(--color-warning);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.badge-error {
+    background: rgba(239, 68, 68, 0.08);
+    color: var(--color-error);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.12);
+}
+
+.badge-info {
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--color-primary);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.badge-outline {
+    background: transparent;
+    border: var(--border-terminal);
+    color: var(--color-text-secondary);
+}
+
+.badge-ghost {
+    background: rgba(99, 102, 241, 0.04);
+    color: var(--color-text-secondary);
+    border: var(--border-terminal);
+}
+
+.badge-gradient-warning {
+    background: rgba(245, 158, 11, 0.08);
+    color: var(--color-warning);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.badge-gradient-warning:hover {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: var(--color-warning);
+}
+
+.badge-gradient-success {
+    background: rgba(16, 185, 129, 0.08);
+    color: var(--color-accent);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.badge-gradient-success:hover {
+    background: rgba(16, 185, 129, 0.14);
+    border-color: var(--color-accent);
+}
+
+/* Sizes */
+.badge-small {
+    padding: 1px 5px;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.badge-medium {
+    padding: 2px 8px;
+    font-size: 9px;
+}
+
+.badge-large {
+    padding: 4px 10px;
+    font-size: 10px;
+}
+
+/* Notification Badge */
+.badge-notification {
+    min-width: 18px;
+    height: 18px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    background: var(--color-error);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    animation: pulse 2s infinite;
+}

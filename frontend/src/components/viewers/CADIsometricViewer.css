@@ -1,0 +1,157 @@
+/* ─── CAD Isometric Viewer Container ─────────────────────────────────────── */
+
+.cad-iso-wrapper {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 400px;
+    background: #0d1117;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #30363d;
+}
+
+/* Three.js canvas mount */
+.cad-iso-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.cad-iso-canvas canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ─── Loading / Error Overlay ─────────────────────────────────────────────── */
+
+.cad-iso-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13, 17, 23, 0.88);
+    z-index: 50;
+    gap: 12px;
+    color: #e6edf3;
+    font-family: var(--font-main);
+}
+
+.cad-iso-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+/* Spinner */
+.cad-iso-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid #30363d;
+    border-top-color: #58a6ff;
+    border-radius: 50%;
+    animation: cad-spin 0.9s linear infinite;
+}
+
+@keyframes cad-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error overlay extras */
+.cad-iso-error {
+    background: rgba(13, 17, 23, 0.92);
+    gap: 8px;
+}
+
+.cad-iso-error-icon {
+    font-size: 2.5rem;
+    color: #f85149;
+}
+
+.cad-iso-error-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e6edf3 !important;
+    margin: 0;
+}
+
+.cad-iso-error-msg {
+    font-size: 0.8rem;
+    color: #8b949e !important;
+    text-align: center;
+    max-width: 300px;
+}
+
+/* ─── Toolbar ─────────────────────────────────────────────────────────────── */
+
+.cad-iso-toolbar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(22, 27, 34, 0.92);
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.cad-iso-toolbar-group {
+    display: flex;
+    gap: 4px;
+    border-right: 1px solid #30363d;
+    padding-right: 10px;
+    margin-right: 4px;
+}
+
+.cad-iso-toolbar-group:last-of-type {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.cad-iso-btn {
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: #e6edf3;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: background 0.12s, border-color 0.12s;
+    font-family: inherit;
+}
+
+.cad-iso-btn:hover {
+    background: #30363d;
+    border-color: #8b949e;
+}
+
+.cad-iso-btn-active {
+    background: #1f6feb;
+    border-color: #388bfd;
+    color: #fff;
+}
+
+.cad-iso-btn-active:hover {
+    background: #388bfd;
+}
+
+.cad-iso-toolbar-label {
+    font-size: 0.75rem;
+    color: #8b949e;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 8px;
+    border-left: 1px solid #30363d;
+}
